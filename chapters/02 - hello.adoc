@@ -1,0 +1,39 @@
+= Bonjour !
+
+== Damien DUPORTAL
+[.right.text-center]
+image::damien.jpg[height="400",float="left"]
+
+* *Training Engineer* @ CloudBees
+** Docker & Apple fanboy. Sorry
+** Human stack focused
+** Rock climber
+* Contact:
+** Twitter: link:https://twitter.com/DamienDuportal[@DamienDuportal]
+** Github: link:https://github.com/dduportal[dduportal]
+** Google: damien.duportal@gmail.com
+
+== Jean-Marc MEESSEN
+[.right.text-center]
+image::Jmm.png[height="300",float="left"]
+*Customer Success Manager* @ CloudBees
+** Explorer of the great things out there
+** Loves to share his discoveries
+** Not too old for great adventures
+* Contact:
+** Twitter: link:https://twitter.com/JM_Meessen[@JM_Meessen]
+** Github: link:https://github.com/jmMeessen[jmMeessen]
+** mail: jean-marc@meessen-web.org
+
+== !
+
+image:fishSticks.jpg[width=800]
+== CloudBees the Jenkins Enterprise Company
+Talk to us if you want more details
+== Et vous ?
+* Y a-t-il des développeurs ici ?
+* Qui pratique l’Intégration Continue ?
+* Avec quels outils ?
+** Jenkins "Old School" ? / "New Generation" ?
+** GitLab ? TeamCity ? TravisCI ? Bamboo ?
+** Autre ?
