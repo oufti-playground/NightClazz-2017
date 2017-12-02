@@ -1,0 +1,10 @@
+= Jenkins, la nouvelle génération
+
+DevDay Mons - 28 Novembre 2017
+Damien DUPORTAL & Jean-Marc MEESSEN
+
+== Qui a connu ceci ?
+
+== Ou encore ceci ?
+
+== Et puis...
