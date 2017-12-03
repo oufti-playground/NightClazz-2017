@@ -1,3 +1,5 @@
+
+[background-color="hsl(50, 89%, 74%)"]
 = Objectifs
 
 = Objectifs
@@ -8,12 +10,13 @@
 * Donner des pistes d'exploration
 * Mais c'est mieux avec un atelier (Lab)
 
+[background-color="hsl(50, 89%, 74%)"]
 = Rappels
 
 = Continuous Integration
-* Each integration is verified by an automated build (including test)
-* Integrate code often, at least daily, to make integration a non-event
-* Continuously build and integrate, with a feedback loop
+* Each integration is verified by an *automated build* (including test)
+* *Integrate code often*, at least daily, to make integration a non-event
+* *Continuously* build and integrate, with a feedback loop
 
 = DevOps: Software as a "Supply Chain"
 
