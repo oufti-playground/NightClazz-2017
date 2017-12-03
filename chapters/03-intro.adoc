@@ -14,42 +14,61 @@
 = Rappels
 
 = Continuous Integration
+
+image::{imagedir}/fail-fast-continuous-integration.png[height=350]
+
 * Each integration is verified by an *automated build* (including test)
 * *Integrate code often*, at least daily, to make integration a non-event
 * *Continuously* build and integrate, with a feedback loop
 
 = DevOps: Software as a "Supply Chain"
 
-= (CD and CD)
+image::{imagedir}/supply-chain.png[]
+
+= !
+
+image::{imagedir}/CD_and_CD.png[]
+
 
 = The Pipeline
 
+image::{imagedir}/pipeline.png[]
+
 = Jenkins
+[.right.text-center]
+image::{imagedir}/jenkins_logo.png[height="400",float="left"]
+
 * Logiciel Open Source
 * Orchestrateur de tâches
 * Un des tout premiers moteur d'intégration continue
 * Architecture  centrée sur les plugins
 ** Un gigantesque écosystème
 
-= (Introducing Blue Ocean)
+= !
+
+image::{imagedir}/BlueOcean.png[]
+
 
 = Blue Ocean
 * Pierre angulaire de l'évolution de Jenkins
 * Visualisation et manipulation de "Pipelines"
 * GUI moderne, se concentrant sur les actions principales
-*
+
+
 = Jenkins Pipelines
+
 * Un outil pour définir votre flux de Continuous Delivery/Deployment avec votre code
 * != outil de création de job comme "Job DSL"
-*
 
 = Ses avantages:
+
 * Survive the Jenkins master restarts
 * Reduces number of jobs
 * Easier specification through code
-*
+
 
 = Définition
+
 * Le Pipeline est décrit dans un fichier texte: le JenkinsFile
 ** DSL spécifique
 ** stocké dans un SCM
