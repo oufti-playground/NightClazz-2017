@@ -1,18 +1,10 @@
 = Bonjour !
 
-== Et vous ?
-* Y a-t-il des développeurs ici ?
-* Qui pratique l’Intégration Continue ?
-* Avec quels outils ?
-** Jenkins "Old School" ? / "New Generation" ?
-** GitLab ? TeamCity ? TravisCI ? Bamboo ?
-** Autre ?
-
-== Damien DUPORTAL
+= Damien DUPORTAL
 [.right.text-center]
 image::{imagedir}/damien.jpg[height="400",float="left"]
 
-*Training Engineer* @ CloudBees
+* *Training Engineer* @ CloudBees
 ** Docker & Apple fanboy.
 ** Human stack focused
 ** Rock climber
@@ -21,10 +13,11 @@ image::{imagedir}/damien.jpg[height="400",float="left"]
 ** Github: link:https://github.com/dduportal[dduportal]
 ** Google: damien.duportal@gmail.com
 
-== Jean-Marc MEESSEN
+= Jean-Marc MEESSEN
 [.right.text-center]
 image::{imagedir}/Jmm.png[height="300",float="left"]
-*Customer Success Manager* @ CloudBees
+
+* *Customer Success Manager* @ CloudBees
 ** Explorer of the great things out there
 ** Loves to share his discoveries
 ** Not too old for great adventures
@@ -33,17 +26,17 @@ image::{imagedir}/Jmm.png[height="300",float="left"]
 ** Github: link:https://github.com/jmMeessen[jmMeessen]
 ** mail: jean-marc@meessen-web.org
 
-== !
+= !
 
 image::{imagedir}/fishSticks.jpg[width=800]
 
-== CloudBees the Jenkins Enterprise Company
+= CloudBees the Jenkins Enterprise Company
 
 image::{imagedir}/Presentation-CloudBees.png[width=800]
 
-== Et vous ?
+= Et vous ?
 [.left.text-center]
-image::{imagedir}/Presentation-you[height="400",float="right"]
+image::{imagedir}/Presentation-you.png[height="400",float="right"]
 
 * Y a-t-il des développeurs ici ?
 * Qui pratique l’Intégration Continue ?

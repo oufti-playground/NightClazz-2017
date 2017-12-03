@@ -1,6 +1,6 @@
 = Objectifs
 
-== Objectifs
+= Objectifs
 
 * Présentation générale
 ** Jenkins Pipelines
@@ -8,43 +8,45 @@
 * Donner des pistes d'exploration
 * Mais c'est mieux avec un atelier (Lab)
 
-== Rappels
+= Rappels
 
-== Continuous Integration
+= Continuous Integration
 * Each integration is verified by an automated build (including test)
 * Integrate code often, at least daily, to make integration a non-event
 * Continuously build and integrate, with a feedback loop
 
-== DevOps: Software as a "Supply Chain"
+= DevOps: Software as a "Supply Chain"
 
-== (CD and CD)
+= (CD and CD)
 
-== The Pipeline
+= The Pipeline
 
-== Jenkins
+= Jenkins
 * Logiciel Open Source
 * Orchestrateur de tâches
 * Un des tout premiers moteur d'intégration continue
 * Architecture  centrée sur les plugins
 ** Un gigantesque écosystème
 
-== (Introducing Blue Ocean)
+= (Introducing Blue Ocean)
 
-== Blue Ocean
+= Blue Ocean
 * Pierre angulaire de l'évolution de Jenkins
 * Visualisation et manipulation de "Pipelines"
 * GUI moderne, se concentrant sur les actions principales
 *
-== Jenkins Pipelines
+= Jenkins Pipelines
 * Un outil pour définir votre flux de Continuous Delivery/Deployment avec votre code
 * != outil de création de job comme "Job DSL"
 *
-== Ses avantages:
+
+= Ses avantages:
 * Survive the Jenkins master restarts
 * Reduces number of jobs
 * Easier specification through code
 *
-== Définition
+
+= Définition
 * Le Pipeline est décrit dans un fichier texte: le JenkinsFile
 ** DSL spécifique
 ** stocké dans un SCM

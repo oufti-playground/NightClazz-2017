@@ -3,6 +3,7 @@ include::./attributes.adoc[]
 = Jenkins, la nouvelle génération
 
 NightClazz Lille - 4 Décembre 2017
+
 Damien DUPORTAL & Jean-Marc MEESSEN
 
 // Here are the chapters
