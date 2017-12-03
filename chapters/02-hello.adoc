@@ -11,7 +11,7 @@ image::{imagedir}/damien.jpg[height="400",float="left"]
 * Contact:
 ** Twitter: link:https://twitter.com/DamienDuportal[@DamienDuportal]
 ** Github: link:https://github.com/dduportal[dduportal]
-** Google: damien.duportal@gmail.com
+** eMail: damien.duportal@gmail.com
 
 = Jean-Marc MEESSEN
 [.right.text-center]
@@ -24,19 +24,19 @@ image::{imagedir}/Jmm.png[height="300",float="left"]
 * Contact:
 ** Twitter: link:https://twitter.com/JM_Meessen[@JM_Meessen]
 ** Github: link:https://github.com/jmMeessen[jmMeessen]
-** mail: jean-marc@meessen-web.org
+** eMail: jean-marc@meessen-web.org
 
 = !
 
-image::{imagedir}/fishSticks.jpg[width=800]
+image::{imagedir}/fishSticks.jpg[width=100%]
 
-= CloudBees the Jenkins Enterprise Company
+= !
 
-image::{imagedir}/Presentation-CloudBees.png[width=800]
+image::{imagedir}/Presentation-CloudBees.png[width=110%]
 
 = Et vous ?
 [.left.text-center]
-image::{imagedir}/Presentation-you.png[height="400",float="right"]
+image::{imagedir}/commitstrip.png[width="400",float="right"]
 
 * Y a-t-il des développeurs ici ?
 * Qui pratique l’Intégration Continue ?
