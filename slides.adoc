@@ -11,5 +11,6 @@ Damien DUPORTAL & Jean-Marc MEESSEN
 include::{chaptersdir}/01-starter.adoc[]
 include::{chaptersdir}/02-hello.adoc[]
 include::{chaptersdir}/03-intro.adoc[]
+include::{chaptersdir}/04-simple-pipeline.adoc[]
 
 :leveloffset: -1
