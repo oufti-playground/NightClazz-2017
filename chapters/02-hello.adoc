@@ -12,7 +12,7 @@
 [.right.text-center]
 image::{imagedir}/damien.jpg[height="400",float="left"]
 
-* *Training Engineer* @ CloudBees
+*Training Engineer* @ CloudBees
 ** Docker & Apple fanboy.
 ** Human stack focused
 ** Rock climber
@@ -38,9 +38,13 @@ image::{imagedir}/Jmm.png[height="300",float="left"]
 image::{imagedir}/fishSticks.jpg[width=800]
 
 == CloudBees the Jenkins Enterprise Company
-Talk to us if you want more details
+
+image::{imagedir}/Presentation-CloudBees.png[width=800]
 
 == Et vous ?
+[.left.text-center]
+image::{imagedir}/Presentation-you[height="400",float="right"]
+
 * Y a-t-il des développeurs ici ?
 * Qui pratique l’Intégration Continue ?
 * Avec quels outils ?
