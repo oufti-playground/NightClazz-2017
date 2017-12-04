@@ -2,7 +2,7 @@
 [background-color="hsl(50, 89%, 74%)"]
 = Définitions
 
-== Continuous Integration
+== Continuous Integration (CI)
 
 image::{imagedir}/fail-fast-continuous-integration.png[height=350]
 
