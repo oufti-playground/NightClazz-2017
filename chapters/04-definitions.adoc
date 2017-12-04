@@ -67,9 +67,9 @@ image::{imagedir}/BlueOcean.png[]
 *** suit les patterns à la “Git / Github / Gitlab flow”
 
 
-=== Starting with Pipelines
+== Débuter avec les Pipelines
 
-* Pipeline-as-code: We need a `Jenkinsfile`
+* Pipeline-as-code: Nous avons besoin d'un `Jenkinsfile`
 
 * Par où commencer ?
 ** link:https://jenkins.io/doc/pipeline/tour/hello-world/[Getting Started with Pipeline,window=_blank]
@@ -77,7 +77,7 @@ image::{imagedir}/BlueOcean.png[]
 ** link:https://jenkins.io/doc/book/pipeline/syntax/[Pipeline Syntax Reference,windows=blank]
 ** link:https://jenkins.io/doc/pipeline/steps/[Pipeline Steps Reference,windows=blank]
 
-=== Declarative or Scripted Pipelines ?
+== Declarative or Scripted Pipelines ?
 
 * *Declarative*
 ** Syntaxe par défaut
@@ -87,7 +87,7 @@ image::{imagedir}/BlueOcean.png[]
 ** "Great Power == Great Responsibility"
 ** À utiliser lorsque le Déclaratif commence à être *bizare* 
 
-=== Blue Ocean Pipeline Editor
+== Blue Ocean Pipeline Editor
 
 * Fourni le cycle ("round trip") *complet* avec le SCM
 * Pas de Pipeline ? "Suivez le guide".
