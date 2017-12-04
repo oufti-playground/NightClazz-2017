@@ -6,9 +6,9 @@
 
 image::{imagedir}/fail-fast-continuous-integration.png[height=350]
 
-* Each integration is verified by an *automated build* (including test)
-* *Integrate code often*, at least daily, to make integration a non-event
-* *Continuously* build and integrate, with a feedback loop
+* Chaque intégration est validée par un *build automatisé* (avec tests)
+* Le code est *intégré souvent*, au moins journellement, pour que l'intégration soit un non-event
+* Construire et intégrer le code *en continu*, avec une boucle de feedback
 
 == DevOps: Software as a "Supply Chain"
 
@@ -51,9 +51,10 @@ image::{imagedir}/BlueOcean.png[]
 
 == Ses avantages:
 
-* Survive the Jenkins master restarts
-* Reduces number of jobs
-* Easier specification through code
+* Réduit le nombre de jobs nécessaires
+* Spécification facilitée par du "code"
+* Survi au redémarrage du Jenkins Master
+
 
 
 == Définition
@@ -70,7 +71,7 @@ image::{imagedir}/BlueOcean.png[]
 
 * Pipeline-as-code: We need a `Jenkinsfile`
 
-* Where to start ?
+* Par où commencer ?
 ** link:https://jenkins.io/doc/pipeline/tour/hello-world/[Getting Started with Pipeline,window=_blank]
 ** link:https://jenkins.io/doc/pipeline[Pipeline "Handbook",windows=blank]
 ** link:https://jenkins.io/doc/book/pipeline/syntax/[Pipeline Syntax Reference,windows=blank]
@@ -79,15 +80,15 @@ image::{imagedir}/BlueOcean.png[]
 === Declarative or Scripted Pipelines ?
 
 * *Declarative*
-** Default syntax
-** Used with Blue Ocean
+** Syntaxe par défaut
+** S'utilise avec Blue Ocean
 * Scripted
-** Original syntax (~3 years)
+** Syntaxe originale (~3 ans)
 ** "Great Power == Great Responsibility"
-** Use it when Declarative starts to be *weird*
+** À utiliser lorsque le Déclaratif commence à être *bizare* 
 
 === Blue Ocean Pipeline Editor
 
-* Provides the *full* round trip with SCM
-* No Pipeline ? Follow the wizard.
-* Already have a Pipeline ? Edit, commit, and run it
+* Fourni le cycle ("round trip") *complet* avec le SCM
+* Pas de Pipeline ? "Suivez le guide".
+* Le Pipeline existe déjà ? Edit, commit, et exécutez le
