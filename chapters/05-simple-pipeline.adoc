@@ -39,36 +39,9 @@
 ** Stored in *Git*
 ** Get the *SSH* URL from the _git server_
 ** Configure Jenkins access to the source code:
-**** In Gitea, click the top-right user drop down
-**** Browse to SSH/GPG Keys
-**** Add a new key, by copy and pasting from Jenkins
-
-// TODO: Webhooks
-// == CI: Fast feedback with Webhooks
-//
-// * We want *Fast feedback* !
-// ** Pushed code to repository ? Tell Jenkins to build it *now*
-// * Let's use *Webhook* to the repository
-// ** HTTP request *Gitea git server* -> *Jenkins*
-//
-// == CI: Add a Gogs Webhooks
-//
-// * From repo. in *Gitea git server* -> *Settings* -> *Webhooks*
-// ** link:{demoapp-repo-web-url}/settings/hooks[Direct link to Repository Webhook Settings,window=_blank]
-// * Add a new webhook:
-// ** Type: *Gogs* (not Slack)
-// ** Payload URL:
-// link:{demoapp-mb-job-build-url}[{demoapp-mb-job-build-url},window=_blank]
-// ** When should this webhook be triggered?: *I need everything*
-
-// ** Use `CTRL + S` (On Mac: `CMD +S`) to switch to/from textual version
-
-// TODO (move later)
-// * Pipeline Syntax Snippet Generator as side kick:
-// ** Dynamic generation based on the installed plugins
-// ** A pipeline job is required: check the left menu icon on
-// link:{demoapp-mb-job-url}[{demoapp-mb-job-url},window=_blank]
-// ** link:{demoapp-mb-job-url}/pipeline-syntax/[{demoapp-mb-job-url}/pipeline-syntax/,window=_blank]
+*** In Gitea, click the top-right user drop down
+*** Browse to SSH/GPG Keys
+*** Add a new key, by copy and pasting from Jenkins
 
 == Exercise - Your First Pipeline
 
@@ -101,135 +74,24 @@ include::{pipeline-solutions}/01-Jenkinsfile-echo[]
 ----
 include::{pipeline-solutions}/02-Jenkinsfile-base[]
 ----
-// TODO
-//
-// == CI: Exercise - Simple Build Pipeline
-//
-// * Exercise: Implement a simple build pipeline for demoapp
-// * We want 4 stages, for the 4 Maven goals:
-// ** `compile`, `test`, `package`, `verify`
-// * We need to build on the `maven` agent
-//
-// == CI: Solution - Simple Build Pipeline
-//
-// [source,subs="attributes",groovy]
-// ----
-// pipeline {
-//   agent {
-//     node {
-//       label 'maven'
-//     }
-//   }
-//   stages {
-//     stage('Compile') {
-//       steps {
-//         sh 'mvn compile'
-//       }
-//     }
-//     stage('Unit Tests') {
-//       steps {
-//         sh 'mvn test'
-//       }
-//     }
-//     stage('Build') {
-//       steps {
-//         sh 'mvn package'
-//       }
-//     }
-//     stage('Integration Tests') {
-//       steps {
-//         sh 'mvn verify'
-//       }
-//     }
-//   }
-// }
-// ----
-//
-// == CI: Exercise - Artifacts
-//
-// * We want to simplify to 2 stages, based on Unit Tests definition:
-// ** `Build`: compile, unit test and package the application
-// ** `Verify`: Run Integration Tests
-//
-// * We also want to *archive* the generated `jar` file
-// ** Only if the build is successful
-//
-// * _Clues_: Keywords `post` + `success` (not in Editor),
-// and `archiveArtifacts`
-//
-// == CI: Solution - Artifacts
-//
-//
-// [source,subs="attributes",groovy]
-// ----
-// pipeline {
-//   agent {
-//     node {
-//       label 'maven'
-//     }
-//   }
-//   stages {
-//     stage('Build') {
-//       steps {
-//         sh 'mvn package'
-//       }
-//     }
-//     stage('Verify') {
-//       steps {
-//         sh 'mvn verify'
-//       }
-//     }
-//   }
-//   post {
-//     success {
-//       archiveArtifacts 'target/demoapp.jar'
-//     }
-//   }
-// }
-// ----
-//
-// == CI: Exercise - Integration Tests Reports
-//
-// * We want the integration test reports to be published to Jenkins
-// ** *Better* feedback loop
-//
-// * If Integration Tests are failing, do NOT fail the build
-// ** Make it *UNSTABLE* instead
-//
-// * _Clues_:
-// ** Maven flag `-fn` ("Fails Never")
-// ** keyword `junit` (Pipeline keyword)
-//
-// == CI: Solution - Integration Tests Reports
-//
-// [source,subs="attributes",groovy]
-// ----
-// pipeline {
-//   agent {
-//     node {
-//       label 'maven'
-//     }
-//   }
-//   stages {
-//     stage('Build') {
-//       steps {
-//         sh 'mvn clean compile test package'
-//       }
-//     }
-//     stage('Verify') {
-//       steps {
-//         sh 'mvn verify -fn'
-//         junit '**/target/failsafe-reports/*.xml'
-//       }
-//     }
-//   }
-//   post {
-//     success {
-//       archiveArtifacts 'target/demoapp.jar'
-//     }
-//   }
-// }
-// ----
+
+== Exercise - Archives and Tests
+
+* Using the *Blue Ocean Pipeline Editor*:
+** Edit the current Pipeline
+** *Build* stage should archive all `*.jar` files found in `./target`
+** *Test* stage should publish the `junit` test reports
+*** Found in `./target`. TIP for recusrive: `**/*.xml`
+* Save, add a commit message and see the build kicking off
+* Build should be *UNSTABLE*
+
+== Solution - Archives and Tests
+
+[source,subs="attributes",groovy]
+----
+include::{pipeline-solutions}/03-Jenkinsfile-archive-tests[]
+----
+
 //
 // == CI: Exercise - All Tests Reports
 //
@@ -281,15 +143,3 @@ include::{pipeline-solutions}/02-Jenkinsfile-base[]
 //   }
 // }
 // ----
-//
-// == CI: Failing Tests
-//
-// * Validate your changes by making your tests fails.
-// * Edit each one and uncomment the failing block:
-// ** Integration: `src/master/src/test/java/hello/ApplicationIT.java`
-// ** Unit Tests: `src/master/src/test/java/hello/ApplicationTest.java`
-//
-// * Browse the top-level items "Changes", "Tests" and "Artifacts"
-// * Do *NOT* forget to correct your tests at the end
-//
-// == That's all folks !

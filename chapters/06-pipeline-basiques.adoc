@@ -1,0 +1,57 @@
+
+[background-color="hsl(50, 89%, 74%)"]
+= Pipeline: Basiques
+
+== Exercise: Réparer le build
+
+* Le build est en état `UNSTABLE` (jaune)
+* *Priorité:* réparer le build
+* Utiliser *Gitea git server*
+* Les tests d'intégration sont dans `src/tests/java/hello`
+* Indices:
+** _Integration Tests:_ == *IT*
+** Il suffit de savoir commenter/dé-commenter
+
+== Solution: Réparer le build
+
+* Depuis link:{demoapp-repo-web-url}/src/master/src/test/java/hello/HelloControllerIT.java[]
+** Cliquer sur "Edit"
+* Commenter la ligne 39
+* *Dé*-commenter la ligne 40
+* *Commit* avec un message (push automatique)
+* Lancer le build manuellement dans Blue Ocean
+
+== Webhooks pour un retour plus rapide
+
+* Nous avons dû lancer le build manuellement
+* IC: Retours *rapides* !
+** Lancer le build dès que le code est poussé
+
+== Exercise: Webhooks
+
+* Configurons un *"Webhook"* :
+** Depuis *Gitea git server* -> *Settings* -> *Webhooks*
+*** link:{demoapp-repo-web-url}/settings/hooks[Lien direct vers la configuration de Webhooks,window=_blank]
+* Ajouter un nouveau webhook:
+** Type: *Gitea*
+** When should this webhook be triggered?: *I need everything*
+** Payload URL:
+link:{demoapp-mb-job-build-url}[{demoapp-mb-job-build-url},window=_blank]
+// http://localhost:10000/jenkins/job/demoapp/build?delay=0
+
+== Solution: Webhooks
+
+* Ajoutez un commentaire dans le Jenkinsfile
+depuis *Gitea git server*
+** Un build va démarrer
+** Validez dans l'onglet "Changes"
+
+//
+// ** Use `CTRL + S` (On Mac: `CMD +S`) to switch to/from textual version
+//
+// TODO (move later)
+// * Pipeline Syntax Snippet Generator as side kick:
+// ** Dynamic generation based on the installed plugins
+// ** A pipeline job is required: check the left menu icon on
+// link:{demoapp-mb-job-url}[{demoapp-mb-job-url},window=_blank]
+// ** link:{demoapp-mb-job-url}/pipeline-syntax/[{demoapp-mb-job-url}/pipeline-syntax/,window=_blank]

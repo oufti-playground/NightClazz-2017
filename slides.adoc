@@ -13,5 +13,6 @@ include::{chaptersdir}/02-hello.adoc[]
 include::{chaptersdir}/03-objectifs.adoc[]
 include::{chaptersdir}/04-definitions.adoc[]
 include::{chaptersdir}/05-simple-pipeline.adoc[]
+include::{chaptersdir}/06-pipeline-basiques.adoc[]
 
 :leveloffset: -1
