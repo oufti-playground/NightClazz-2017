@@ -6,6 +6,7 @@
 :idprefix:
 :imagedir: ./images
 :chaptersdir: ./chapters
+:pipeline-solutions: ./pipeline-solutions
 :revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0
 :revealjs_theme: beige
 :revealjs_history: true

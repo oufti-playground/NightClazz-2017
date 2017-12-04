@@ -32,7 +32,7 @@
 ** link:{jenkins-url}/blue[Direct link to Blue Ocean GUI,window=_blank]
 ** _Or_ click on the item "Open Blue Ocean", on the left menu
 
-== Our First Pipeline Project
+== Exercise: Create First Project
 
 * Create a new Pipeline, with the following properties:
 ** Stored in *Git*
@@ -41,7 +41,6 @@
 **** In Gitea, click the top-right user drop down
 **** Browse to SSH/GPG Keys
 **** Add a new key, by copy and pasting from Jenkins
-** Pipeline is empty (for now): no `Jenkinsfile`
 
 // TODO: Webhooks
 // == CI: Fast feedback with Webhooks
@@ -61,35 +60,6 @@
 // link:{demoapp-mb-job-build-url}[{demoapp-mb-job-build-url},window=_blank]
 // ** When should this webhook be triggered?: *I need everything*
 
-== Starting with Pipelines
-
-* Pipeline-as-code: We need a `Jenkinsfile`
-
-* Where to start ?
-** link:https://jenkins.io/doc/pipeline/tour/hello-world/[Getting Started with Pipeline,window=_blank]
-** link:https://jenkins.io/doc/pipeline[Pipeline "Handbook",windows=blank]
-** link:https://jenkins.io/doc/book/pipeline/syntax/[Pipeline Syntax Reference,windows=blank]
-** link:https://jenkins.io/doc/pipeline/steps/[Pipeline Steps Reference,windows=blank]
-
-== Declarative or Scripted Pipelines ?
-
-* *Declarative*
-** Default syntax
-** Used with Blue Ocean
-* Scripted
-** Original syntax (~3 years)
-** "Great Power == Great Responsibility"
-** Use it when Declarative starts to be *weird*
-
-== Blue Ocean Pipeline Editor
-
-* Provides the *full* round trip with SCM
-* No Pipeline ? Follow the wizard.
-* Already have a Pipeline ? Edit, commit, and run it
-
-== Use the Pipeline Editor
-
-* Click the button *Create a Pipeline*
 // ** Use `CTRL + S` (On Mac: `CMD +S`) to switch to/from textual version
 
 // TODO (move later)
@@ -101,6 +71,7 @@
 
 == Exercise - Your First Pipeline
 
+* Click the button *Create a Pipeline*
 * Use the *Blue Ocean Pipeline Editor* and *Gitea git server*
 * Create a Pipeline that have 3 stages: *Build*, *Test* and *Deploy*
 * Each stage has 1 step that prints a message
@@ -111,28 +82,24 @@
 
 [source,subs="attributes",groovy]
 ----
-pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        echo 'Building...'
-      }
-    }
-    stage('Test') {
-      steps {
-        echo 'Testing...'
-      }
-    }
-    stage('Deploy') {
-      steps {
-        echo 'Deploying...'
-      }
-    }
-  }
-}
+include::{pipeline-solutions}/01-Jenkinsfile-echo[]
 ----
 
+== Exercise - Run tasks with Pipeline
+
+* Using the *Blue Ocean Pipeline Editor*:
+** Edit the current Pipeline's 3 stages to run scripts
+** Scripts are stored in the `./scripts` folder (in SCM)
+** Use the step *Shell Script* (keyword `sh`)
+** Remove the `echo` steps
+* Save, add a commit message and see the build kicking off
+
+== Solution - Run tasks with Pipeline
+
+[source,subs="attributes",groovy]
+----
+include::{pipeline-solutions}/02-Jenkinsfile-base[]
+----
 // TODO
 //
 // == CI: Exercise - Simple Build Pipeline
