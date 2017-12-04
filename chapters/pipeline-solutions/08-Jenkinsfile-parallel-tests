@@ -9,8 +9,15 @@ pipeline {
       }
       steps {
         sh './scripts/build.sh'
-        archiveArtifacts 'target/*.jar'
-        stash(name: 'build-result', includes: 'target/**/*')
+      }
+      post {
+        always {
+          junit 'target/surefire-reports/**/*.xml'
+        }
+        success {
+          archiveArtifacts 'target/*.jar'
+          stash(name: 'build-result', includes: 'target/**/*')
+        }
       }
     }
     stage('Test') {
