@@ -2,7 +2,7 @@
 [background-color="hsl(50, 89%, 74%)"]
 = Bonjour !
 
-= Damien DUPORTAL
+== Damien DUPORTAL
 [.right.text-center]
 image::{imagedir}/damien.jpg[height="400",float="left"]
 
@@ -15,7 +15,7 @@ image::{imagedir}/damien.jpg[height="400",float="left"]
 ** Github: link:https://github.com/dduportal[dduportal]
 ** eMail: damien.duportal@gmail.com
 
-= Jean-Marc MEESSEN
+== Jean-Marc MEESSEN
 [.right.text-center]
 image::{imagedir}/Jmm.png[height="300",float="left"]
 
@@ -28,15 +28,15 @@ image::{imagedir}/Jmm.png[height="300",float="left"]
 ** Github: link:https://github.com/jmMeessen[jmMeessen]
 ** eMail: jean-marc@meessen-web.org
 
-= !
+== !
 
 image::{imagedir}/fishSticks.jpg[width=100%]
 
-= !
+== !
 
 image::{imagedir}/Presentation-CloudBees.png[width=110%]
 
-= Et vous ?
+== Et vous ?
 [.left.text-center]
 image::{imagedir}/commitstrip.png[width="400",float="right"]
 

@@ -6,12 +6,12 @@ NightClazz Lille - 4 Décembre 2017
 
 Damien DUPORTAL & Jean-Marc MEESSEN
 
-// Here are the chapters
-:leveloffset: +1
-
 include::{chaptersdir}/01-starter.adoc[]
+
+:leveloffset: +1
 include::{chaptersdir}/02-hello.adoc[]
-include::{chaptersdir}/03-intro.adoc[]
-include::{chaptersdir}/04-simple-pipeline.adoc[]
+include::{chaptersdir}/03-objectifs.adoc[]
+include::{chaptersdir}/04-definitions.adoc[]
+include::{chaptersdir}/05-simple-pipeline.adoc[]
 
 :leveloffset: -1
