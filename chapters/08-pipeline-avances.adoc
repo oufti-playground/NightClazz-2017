@@ -114,3 +114,10 @@ include::{pipeline-solutions}/13-shared-library-basic-example[]
 * Switch to legacy UI, configure the Multibranch job
 ** Add the shared library
 * Adapt the pipeline to run the function in Build stage
+
+== Solution - Shared Libraries
+
+[source,groovy,subs="attributes"]
+----
+include::{pipeline-solutions}/14-Jenkinsfile-shared-lib[]
+----
