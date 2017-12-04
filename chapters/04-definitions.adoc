@@ -85,7 +85,7 @@ image::{imagedir}/BlueOcean.png[]
 * Scripted
 ** Syntaxe originale (~3 ans)
 ** "Great Power == Great Responsibility"
-** À utiliser lorsque le Déclaratif commence à être *bizare* 
+** À utiliser lorsque le Déclaratif commence à être *bizarre* 
 
 == Blue Ocean Pipeline Editor
 
