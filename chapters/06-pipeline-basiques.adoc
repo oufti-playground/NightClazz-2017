@@ -79,3 +79,32 @@ le ré-ordonnancement de "stages"
 ----
 include::{pipeline-solutions}/04-Jenkinsfile-stash-tests[]
 ----
+
+== Post-Stage
+
+* Section `post` :
+** Contient des "steps" à exécuter
+à la fin du Pipeline *ou* après une "stage"
+** Divisé en "condition d'états":
+`always`, `success`, `failure`, `changed`
+* Chaque condition contient ses propres "steps"
+* Pas _encore_ intégré dans l'éditeur Blue Ocean
+
+== Exercice - Rapport de Tests Unitaires
+
+* Si le "stage" *Build* échoue,
+alors la tâche "archiveArtifacts" ne devrait pas être exécutée
+** Même chose pour `stash`
+* Le rapports de tests unitaires doivent être
+publiés dans *tous* les cas
+** Format Junit
+** Stockés dans `./target/surefire-reports/**/*.xml`
+* Utiliser la documentation:
+** ** link:https://jenkins.io/doc/book/pipeline/syntax/#post[Post section on docs.jenkins.io]
+
+== Solution - Rapport de Tests Unitaires
+
+[source,groovy,subs="attributes"]
+----
+include::{pipeline-solutions}/06-Jenkinsfile-post-tests[]
+----

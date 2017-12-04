@@ -1,0 +1,20 @@
+
+[background-color="hsl(50, 89%, 74%)"]
+= Pipeline Avancés
+
+== Input
+
+== Exercice - Validation Humaine
+// With Timeouts and agent none
+
+== Solution - Validation Humaine
+
+== Conditionnal Stage
+// Mot clef when
+
+== Variables d'environment
+
+== Exercice - Déploiement Conditionnel
+// Déploiement uni
+
+== Solution - Déploiement Conditionnel
