@@ -14,12 +14,14 @@
 
 == Solution: Réparer le build
 
-* Depuis link:{demoapp-repo-web-url}/src/master/src/test/java/hello/HelloControllerIT.java[]
+* Depuis
+link:{demoapp-repo-web-url}/src/master/src/test/java/hello/HelloControllerIT.java[src/test/java/hello/HelloControllerIT.java]
 ** Cliquer sur "Edit"
 * Commenter la ligne 39
 * *Dé*-commenter la ligne 40
 * *Commit* avec un message (push automatique)
 * Lancer le build manuellement dans Blue Ocean
+* Le build doit être vert (*Stable*)
 
 == Webhooks pour un retour plus rapide
 
@@ -37,7 +39,6 @@
 ** When should this webhook be triggered?: *I need everything*
 ** Payload URL:
 link:{demoapp-mb-job-build-url}[{demoapp-mb-job-build-url},window=_blank]
-// http://localhost:10000/jenkins/job/demoapp/build?delay=0
 
 == Solution: Webhooks
 
@@ -46,12 +47,35 @@ depuis *Gitea git server*
 ** Un build va démarrer
 ** Validez dans l'onglet "Changes"
 
-//
-// ** Use `CTRL + S` (On Mac: `CMD +S`) to switch to/from textual version
-//
-// TODO (move later)
-// * Pipeline Syntax Snippet Generator as side kick:
-// ** Dynamic generation based on the installed plugins
-// ** A pipeline job is required: check the left menu icon on
-// link:{demoapp-mb-job-url}[{demoapp-mb-job-url},window=_blank]
-// ** link:{demoapp-mb-job-url}/pipeline-syntax/[{demoapp-mb-job-url}/pipeline-syntax/,window=_blank]
+== Aller plus loin...
+
+* Dans l'éditeur *Blue Ocean*, voir la version textuelle:
+** Combinaison `CTRL + S` (On Mac: `CMD +S`)
+** Bi-directionnel: essayez de charger une solution de pipeline
+
+* Le *Pipeline Syntax Snippet Generator* comme acolyte:
+** Génération dynamique en fonction de vos plugins
+** Depuis l'interface "ancienne" de Jenkins
+** Menu de gauche de votre job "Pipeline" (ou MultiBranch)
+*** link:{demoapp-mb-job-url}/pipeline-syntax/[{demoapp-mb-job-url}/pipeline-syntax/,window=_blank]
+
+== Exercise - Réutilisation Binaire
+
+* But: réutiliser les binaires générés dans *Build*
+* Action: "mise sur étagère": *Stash / Unstash*
+* Modifier le Pipeline pour :
+** "Stasher" le dossier `target`, à la fin de la phase *Build*
+** "Unstasher" au début de la phase *Test*
+* _Attention_, une limite de l'éditeur *Blue Ocean*
+va être atteinte
+
+== Solution - Réutilisation Binaire
+
+* L'éditeur Blue Ocean ne supporte pas encore
+le ré-ordonnancement de "stages"
+** Mode textuel et/ou *Snippet Generator* à utiliser
+
+[source,groovy,subs="attributes"]
+----
+include::{pipeline-solutions}/04-Jenkinsfile-stash-tests[]
+----

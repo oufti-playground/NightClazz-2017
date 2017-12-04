@@ -54,7 +54,7 @@
 
 == Solution - Your first pipeline
 
-[source,subs="attributes",groovy]
+[source,groovy,subs="attributes"]
 ----
 include::{pipeline-solutions}/01-Jenkinsfile-echo[]
 ----
@@ -70,7 +70,7 @@ include::{pipeline-solutions}/01-Jenkinsfile-echo[]
 
 == Solution - Run tasks with Pipeline
 
-[source,subs="attributes",groovy]
+[source,groovy,subs="attributes"]
 ----
 include::{pipeline-solutions}/02-Jenkinsfile-base[]
 ----
@@ -87,59 +87,7 @@ include::{pipeline-solutions}/02-Jenkinsfile-base[]
 
 == Solution - Archives and Tests
 
-[source,subs="attributes",groovy]
+[source,groovy,subs="attributes"]
 ----
 include::{pipeline-solutions}/03-Jenkinsfile-archive-tests[]
 ----
-
-//
-// == CI: Exercise - All Tests Reports
-//
-// * We now want *all* test reports published
-// ** *Problem:* how to handle Unit test failure ?
-//
-// * We also want to archive artifacts if build is
-// unstable *only* due to the `Verify` stage
-//
-// * _Clues_: `post` can be used per stage
-//
-// == CI: Solution - All Tests Reports
-//
-// [source,subs="attributes",groovy]
-// ----
-// pipeline {
-//   agent {
-//     node {
-//       label 'maven'
-//     }
-//   }
-//   stages {
-//     stage('Build') {
-//       steps {
-//         sh 'mvn clean compile test package'
-//       }
-//       post {
-//         always {
-//           junit '**/target/surefire-reports/*.xml'
-//         }
-//       }
-//     }
-//     stage('Verify') {
-//       steps {
-//         sh 'mvn verify -fn'
-//         junit '**/target/failsafe-reports/*.xml'
-//       }
-//       post {
-//         unstable {
-//           archiveArtifacts 'target/demoapp.jar'
-//         }
-//       }
-//     }
-//   }
-//   post {
-//     success {
-//       archiveArtifacts 'target/demoapp.jar'
-//     }
-//   }
-// }
-// ----
