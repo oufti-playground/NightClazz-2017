@@ -1,6 +1,6 @@
 
 [background-color="hsl(50, 89%, 74%)"]
-= Rappels
+= Définitions
 
 == Continuous Integration
 
@@ -85,7 +85,7 @@ image::{imagedir}/BlueOcean.png[]
 * Scripted
 ** Syntaxe originale (~3 ans)
 ** "Great Power == Great Responsibility"
-** À utiliser lorsque le Déclaratif commence à être *bizarre* 
+** À utiliser lorsque le Déclaratif commence à être *bizarre*
 
 == Blue Ocean Pipeline Editor
 

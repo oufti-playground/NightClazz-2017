@@ -4,17 +4,55 @@
 
 == Input
 
+* Jenkins permet de "mettre en pause" l'exécution
+d'un pipeline, en attendant une validation humaine
+* Continuous Delivery / Deployment
+* Mot-clef `input`, c'est une "step" Pipeline
+** Hautement configurable:
+link:https://jenkins.io/doc/pipeline/steps/pipeline-input-step/[Documentation Step Input]
+* Généralement utilisé dans un "stage" dédié.
+** Obligatoirement avec `agent none` (pas d'exécuteur, pas de workspace)
+
 == Exercice - Validation Humaine
-// With Timeouts and agent none
+
+* Ajouter une stage "approval" avant le déploiement
 
 == Solution - Validation Humaine
 
-== Conditionnal Stage
-// Mot clef when
+[source,groovy,subs="attributes"]
+----
+include::{pipeline-solutions}/09-Jenkinsfile-interactive-input[]
+----
 
-== Variables d'environment
+== Conditionnal Stage
+
+* Définir l'exécution conditionnelle d'une "stage"
+* Mot clef `when`
+* Doit contenir au moins une condition parmi:
+** `branch`
+** `environment`
+** `expression`
+** Logique "built-in": `allOf`, `anyOf`, etc.
+* link:https://jenkins.io/doc/book/pipeline/syntax/#when[When Documentation]
+
+== Variables d'environments
+
+* Définir des collections de clé-valeurs,
+en tant que variables d'environement:
+** Définition globale ou par "stage"
+** Ou en utilisant `withEnv` dans un block `steps`
+pour une instruction spécifique
 
 == Exercice - Déploiement Conditionnel
-// Déploiement uni
+
+* N'éxecuter les "stages" *Approval* et *Deploy* que:
+** *Si* on se trouve sur la branche `master`
+** *Ou si* la variable `FORCE_DEPLOY` est à `true`
 
 == Solution - Déploiement Conditionnel
+
+
+[source,groovy,subs="attributes"]
+----
+include::{pipeline-solutions}/10-Jenkinsfile-conditional-deploy[]
+----

@@ -23,7 +23,7 @@ configuré avec le label `java8`
 
 [source,groovy,subs="attributes"]
 ----
-include::{pipeline-solutions}/07-Jenkinsfile-agents[]
+include::{pipeline-solutions}/06-Jenkinsfile-agents[]
 ----
 
 == Exercice - Tests Parallèles
@@ -39,7 +39,7 @@ des "stages"
 
 [source,groovy,subs="attributes"]
 ----
-include::{pipeline-solutions}/08-Jenkinsfile-parallel-tests[]
+include::{pipeline-solutions}/07-Jenkinsfile-parallel-tests[]
 ----
 
 == Agents avec Docker
@@ -64,5 +64,5 @@ dans un block `dockerfile`
 
 [source,groovy,subs="attributes"]
 ----
-include::{pipeline-solutions}/09-Jenkinsfile-dockerfile-agents[]
+include::{pipeline-solutions}/08-Jenkinsfile-dockerfile-agents[]
 ----

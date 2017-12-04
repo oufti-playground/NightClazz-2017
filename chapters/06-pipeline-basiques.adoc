@@ -106,5 +106,5 @@ publiés dans *tous* les cas
 
 [source,groovy,subs="attributes"]
 ----
-include::{pipeline-solutions}/06-Jenkinsfile-post-tests[]
+include::{pipeline-solutions}/05-Jenkinsfile-post-tests[]
 ----

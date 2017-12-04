@@ -3,22 +3,31 @@ pipeline {
   stages {
     stage('Build') {
       agent {
-        node {
-          label 'maven-java8'
+        dockerfile {
+          filename 'Dockerfile.build'
+          label 'docker'
         }
       }
       steps {
         sh './scripts/build.sh'
-        archiveArtifacts 'target/*.jar'
-        stash(name: 'build-result', includes: 'target/**/*')
+      }
+      post {
+        always {
+          junit 'target/surefire-reports/**/*.xml'
+        }
+        success {
+          archiveArtifacts 'target/*.jar'
+          stash(name: 'build-result', includes: 'target/**/*')
+        }
       }
     }
     stage('Test') {
       parallel {
         stage('Test Java 8') {
           agent {
-            node {
-              label 'java8'
+            docker {
+              image 'maven:3-jdk-8-alpine'
+              label 'docker'
             }
           }
           steps {
@@ -42,13 +51,26 @@ pipeline {
       }
     }
     stage('Approval') {
+      agent none
       steps {
         input(message: 'Deploy Application?', ok: 'Yes Deploy!')
+      }
+      when {
+        anyOf {
+          branch 'master'
+          environment name: 'FORCE_DEPLOY', value: 'true'
+        }
       }
     }
     stage('Deploy') {
       steps {
         sh './scripts/deploy.sh'
+      }
+      when {
+        anyOf {
+          branch 'master'
+          environment name: 'FORCE_DEPLOY', value: 'true'
+        }
       }
     }
   }
