@@ -1,5 +1,11 @@
 pipeline {
   agent any
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+  }
+  parameters {
+    string(name: 'DEPLOY_MESSAGE', defaultValue: 'Deploy ?', description: 'Message de déploiement')
+  }
   environment {
     FORCE_DEPLOY = 'false'
   }
@@ -56,7 +62,9 @@ pipeline {
     stage('Approval') {
       agent none
       steps {
-        input(message: 'Deploy Application?', ok: 'Yes Deploy!')
+        timeout(time: 3, unit: 'MINUTES') {
+          input(message: params.DEPLOY_MESSAGE, ok: 'Yes Deploy!')
+        }
       }
       when {
         anyOf {
