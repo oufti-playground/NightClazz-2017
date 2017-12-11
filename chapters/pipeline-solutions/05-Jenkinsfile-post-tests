@@ -10,6 +10,9 @@ pipeline {
           archiveArtifacts 'target/*.jar'
           stash(name: 'build-result', includes: 'target/**/*')
         }
+        always {
+          junit 'target/**/*.xml'
+        }
       }
     }
     stage('Test') {
@@ -17,11 +20,6 @@ pipeline {
         unstash 'build-result'
         sh './scripts/test.sh'
         junit 'target/**/*.xml'
-      }
-      post {
-        always {
-          junit 'target/**/*.xml'
-        }
       }
     }
     stage('Deploy') {

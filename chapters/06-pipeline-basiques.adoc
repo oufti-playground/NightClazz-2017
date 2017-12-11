@@ -96,7 +96,7 @@ include::{pipeline-solutions}/04-Jenkinsfile-stash-tests[]
 alors la tâche "archiveArtifacts" ne devrait pas être exécutée
 ** Même chose pour `stash`
 * Les rapports de tests unitaires doivent être
-publiés dans *tous* les cas après la phase *Test*
+publiés dans *tous* les cas après la phase *Build*
 ** Format Junit
 ** Stockés dans `target/{asterisk}{asterisk}/{asterisk}.xml`
 * Utiliser la documentation:
