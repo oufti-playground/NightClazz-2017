@@ -49,7 +49,7 @@
 * Use the *Blue Ocean Pipeline Editor* and *Gitea git server*
 * Create a Pipeline that have 3 stages: *Build*, *Test* and *Deploy*
 * Each stage has 1 step that prints a message
-** "Building..." for *Build*, "Testing..." for *Test*...
+** "Building..." for *Build*, "Testing..." for *Test* ...
 * Save, add a commit message and see the build kicking off
 
 == Solution - Your first pipeline
@@ -79,9 +79,10 @@ include::{pipeline-solutions}/02-Jenkinsfile-base[]
 
 * Using the *Blue Ocean Pipeline Editor*:
 ** Edit the current Pipeline
-** *Build* stage should archive all `*.jar` files found in `./target`
+** *Build* stage should archive all `{asterisk}.jar` files
+*** Found in the directory `target`. TIP for pattern: `{asterisk}.jar`
 ** *Test* stage should publish the `junit` test reports
-*** Found in `./target`. TIP for recusrive: `**/*.xml`
+*** Found in `target`. TIP for recursive pattern: `{asterisk}{asterisk}/{asterisk}.xml`
 * Save, add a commit message and see the build kicking off
 * Build should be *UNSTABLE*
 

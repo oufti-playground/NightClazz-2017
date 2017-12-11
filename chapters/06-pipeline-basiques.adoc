@@ -7,7 +7,7 @@
 * Le build est en état `UNSTABLE` (jaune)
 * *Priorité:* réparer le build
 * Utiliser *Gitea git server*
-* Les tests d'intégration sont dans `src/tests/java/hello`
+* Les tests d'intégration sont dans `src/test/java/hello`
 * Indices:
 ** _Integration Tests:_ == *IT*
 ** Il suffit de savoir commenter/dé-commenter
@@ -95,12 +95,12 @@ include::{pipeline-solutions}/04-Jenkinsfile-stash-tests[]
 * Si le "stage" *Build* échoue,
 alors la tâche "archiveArtifacts" ne devrait pas être exécutée
 ** Même chose pour `stash`
-* Le rapports de tests unitaires doivent être
-publiés dans *tous* les cas
+* Les rapports de tests unitaires doivent être
+publiés dans *tous* les cas après la phase *Test*
 ** Format Junit
-** Stockés dans `./target/surefire-reports/**/*.xml`
+** Stockés dans `target/{asterisk}{asterisk}/{asterisk}.xml`
 * Utiliser la documentation:
-** ** link:https://jenkins.io/doc/book/pipeline/syntax/#post[Post section on docs.jenkins.io]
+** link:https://jenkins.io/doc/book/pipeline/syntax/#post[Post section on docs.jenkins.io]
 
 == Solution - Rapport de Tests Unitaires
 
