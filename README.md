@@ -3,6 +3,8 @@
 Notes about the NightClazz on Jenkins,
 at Zenika Lille the 4th December 2017.
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
 ## Generate the presentation
 
 * You need:
